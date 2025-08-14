@@ -7,12 +7,14 @@ import cors from 'cors';
 import setupSocket from './utils/socket.js';
 import http from 'http';
 import cookieParser from 'cookie-parser';
-import path from 'path';
+import path from 'path'; 
 
 const app = express();
 const server = http.createServer(app);
 
 dotenv.config(); 
+
+console.log(process.env.MONGODB_URI)
 
 connectDB();
 
@@ -35,10 +37,10 @@ app.use(cookieParser());
 // });
 
 
-// app.use(cors({
-//     origin: 'http://localhost:5173',
-//     credentials: true,
-// }))
+app.use(cors({
+    origin: 'https://ownchatapp.onrender.com',
+    credentials: true,
+}))
 
 app.use('/api/user', userRoutes);
 app.use('/api/message', messageRoutes);

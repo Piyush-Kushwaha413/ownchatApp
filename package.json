@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
-    "build": "npm install && npm install --prefix Client && npm run build --prefix Client"
+    "dev": "npm install && npm install --prefix Client && npm run build --prefix Client"
   },
   "keywords": [],
   "author": "",
